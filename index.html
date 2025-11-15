@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Energy Consumption Prediction</title>
+    <style>
+        body {
+            font-family: Poppins, sans-serif;
+            background: linear-gradient(to right, #4b79a1, #283e51);
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        form {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            display: inline-block;
+            width: 300px;
+        }
+        input, button {
+            width: 90%;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+        }
+        button {
+            background:#ffb400;
+            cursor:pointer;
+            font-weight: bold;
+        }
+        h1 { color:#ffdb58; }
+        h3 { margin-top:20px; color:#fff; }
+    </style>
+</head>
+
+<body>
+    <h1>⚡ Smart Energy Consumption Predictor</h1>
+
+    <form action="/predict" method="post">
+        <label>🌡 Temperature (°C)</label>
+        <input type="number" step="0.1" name="temp" required>
+
+        <label>💧 Humidity (%)</label>
+        <input type="number" step="0.1" name="humidity" required>
+
+        <label>📅 Date</label>
+        <input type="date" name="date" required>
+
+        <button type="submit">🔮 Predict</button>
+    </form>
+
+    <h3>{{ prediction_text }}</h3>
+</body>
+</html>
